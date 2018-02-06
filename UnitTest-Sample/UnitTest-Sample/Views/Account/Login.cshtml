@@ -1,0 +1,51 @@
+﻿@using UnitTest_Sample.Models
+@model LoginViewModel
+@{
+                /**/
+
+                ViewBag.Title = "ログイン";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+    if (ViewBag.ReturnUrl != null)
+    {
+        <text>@Html.Hidden("returnUrl", (string)ViewBag.ReturnUrl)</text>
+    }
+    <div>
+        @Html.LabelFor(m => m.UserName)
+        <div>
+            @Html.TextBoxFor(m => m.UserName)
+            @Html.ValidationMessageFor(model => model.UserName, "")
+        </div>
+        <div class="col-md-6 hidden-xs hidden-sm">
+            &nbsp;
+        </div>
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Password)
+        <div>
+            @Html.PasswordFor(m => m.Password)
+            @Html.ValidationMessageFor(model => model.Password, "")
+        </div>
+        <div>
+            &nbsp;
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <input type="submit" value="ログイン"/>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(x => x.UserName)<br />
+    @Html.PasswordFor(x => x.Password)<br />
+    <input type="submit" />
+}
