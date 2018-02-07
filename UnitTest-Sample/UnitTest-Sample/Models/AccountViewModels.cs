@@ -51,11 +51,11 @@ namespace UnitTest_Sample.Models
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "ユーザ名を入力してください")]
         [Display(Name = "ユーザー名")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "パスワードを入力してください")]
         [DataType(DataType.Password)]
         [Display(Name = "パスワード")]
         public string Password { get; set; }

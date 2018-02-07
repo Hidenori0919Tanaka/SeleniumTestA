@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest-Sample", "UnitTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest-Sample.Tests", "UnitTest-Sample.Tests\UnitTest-Sample.Tests.csproj", "{E72E4E1D-675B-4B4A-93EA-AA8F94AAD25F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest-SampleTests", "UnitTest-SampleTests\UnitTest-SampleTests.csproj", "{5FB39937-EA48-4419-8883-FF284602A925}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{E72E4E1D-675B-4B4A-93EA-AA8F94AAD25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E72E4E1D-675B-4B4A-93EA-AA8F94AAD25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E72E4E1D-675B-4B4A-93EA-AA8F94AAD25F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5FB39937-EA48-4419-8883-FF284602A925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FB39937-EA48-4419-8883-FF284602A925}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FB39937-EA48-4419-8883-FF284602A925}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FB39937-EA48-4419-8883-FF284602A925}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

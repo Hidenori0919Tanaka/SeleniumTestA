@@ -1,12 +1,12 @@
 ﻿@using UnitTest_Sample.Models
 @model LoginViewModel
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "ログイン";
+    ViewBag.Title = "ログイン";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2 id="SeleniumH2">@ViewBag.Title</h2>
 
 @using (Html.BeginForm("Login", "Account", FormMethod.Post))
 {
@@ -14,11 +14,12 @@
     {
         <text>@Html.Hidden("returnUrl", (string)ViewBag.ReturnUrl)</text>
     }
+    @Html.ValidationSummary(true, "", new { @id = "SeleniumValidationError" })
     <div>
-        @Html.LabelFor(m => m.UserName)
+        @Html.LabelFor(m => m.UserName, new { @id = "SeleniumUserLabel" })
         <div>
-            @Html.TextBoxFor(m => m.UserName)
-            @Html.ValidationMessageFor(model => model.UserName, "")
+            @Html.TextBoxFor(m => m.UserName, new { @id = "SeleniumUserText" })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @id = "SeleniumUserError" })
         </div>
         <div class="col-md-6 hidden-xs hidden-sm">
             &nbsp;
@@ -26,10 +27,10 @@
     </div>
 
     <div>
-        @Html.LabelFor(m => m.Password)
+        @Html.LabelFor(m => m.Password, new { @id = "SeleniumPasswordLabel" })
         <div>
-            @Html.PasswordFor(m => m.Password)
-            @Html.ValidationMessageFor(model => model.Password, "")
+            @Html.PasswordFor(m => m.Password, new { @id = "SeleniumPasswordText" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @id = "SeleniumPasswordError" })
         </div>
         <div>
             &nbsp;
@@ -38,14 +39,7 @@
 
     <div>
         <div>
-            <input type="submit" value="ログイン"/>
+            <input type="submit" value="ログイン" id="SeleniumLoginBtn"/>
         </div>
     </div>
-}
-
-@using (Html.BeginForm())
-{
-    @Html.EditorFor(x => x.UserName)<br />
-    @Html.PasswordFor(x => x.Password)<br />
-    <input type="submit" />
 }
