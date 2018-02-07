@@ -1,13 +1,14 @@
 Name
 ====
-Seleniumサンプルコード(.NET webdriverForNuget Chrome)
+Seleniumサンプルコード
 
 Overview
 ===
-『Seleniumサンプルコード』
-使用Nuget  
-*Selenium WebDriver
-*Selenium.Chrome.Webdriver
+*使用Nuget*  
+* NUnit
+* NUnit3Adapter
+* Selenium WebDriver
+* Selenium.Chrome.Webdriver
 
 
 ## Description
@@ -26,7 +27,6 @@ Overview
 
 ## Licence
 
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
 
 ## Author
 
