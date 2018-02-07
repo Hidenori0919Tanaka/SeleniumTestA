@@ -20,11 +20,14 @@ namespace UnitTest_Sample.Controllers.Tests
         [TestMethod]
         public void LoginTest()
         {
-            IndexTestByDriver(ChromeDriver);
+            NUnit.Framework.Assert.AreEqual("","");
         }
 
-        private void IndexTestByDriver(IWebDriver driver)
+        [TestMethod()]
+        public void AutomationUITestTest()
         {
+            IWebDriver driver = ChromeDriver;
+
             ChromeDriver.Navigate().GoToUrl(GetAbsoluteUrl("/Account/Login"));
             //Pathチェック
             NUnit.Framework.Assert.AreEqual(GetAbsoluteUrl("/Account/Login"), driver.Url.ToString());
@@ -33,7 +36,7 @@ namespace UnitTest_Sample.Controllers.Tests
             //h2タグテキストチェック
             NUnit.Framework.Assert.AreEqual("ログイン", driver.FindElements(By.Id("SeleniumH2")).FirstOrDefault().Text.ToString());
             //userLabelチェック
-            NUnit.Framework.Assert.AreEqual("ユーザー名",driver.FindElements(By.Id("SeleniumUserLabel")).FirstOrDefault().Text.ToString());
+            NUnit.Framework.Assert.AreEqual("ユーザー名", driver.FindElements(By.Id("SeleniumUserLabel")).FirstOrDefault().Text.ToString());
             //passwordLabelチェック
             NUnit.Framework.Assert.AreEqual("パスワード", driver.FindElements(By.Id("SeleniumPasswordLabel")).FirstOrDefault().Text.ToString());
             //buttonValueチェック
@@ -72,7 +75,12 @@ namespace UnitTest_Sample.Controllers.Tests
             element.SendKeys("admin");
             element = driver.FindElement(By.Id("SeleniumLoginBtn"));
             element.Click();
+
+
+            //Home テストケース
             NUnit.Framework.Assert.AreEqual(GetAbsoluteUrl(""), driver.Url.ToString());
+            NUnit.Framework.Assert.AreEqual("", driver.FindElement(By.Id("SeleniumTitle")).Text);
+            NUnit.Framework.Assert.AreEqual("Index", driver.FindElement(By.Id("SeleniumH1")).Text);
         }
     }
 }

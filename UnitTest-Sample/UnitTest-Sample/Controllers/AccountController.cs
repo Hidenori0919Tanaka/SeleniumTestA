@@ -424,6 +424,11 @@ namespace UnitTest_Sample.Controllers
             base.Dispose(disposing);
         }
 
+        public void AutomationUITest()
+        {
+
+        }
+
         #region ヘルパー
         // 外部ログインの追加時に XSRF の防止に使用します
         private const string XsrfKey = "XsrfId";
