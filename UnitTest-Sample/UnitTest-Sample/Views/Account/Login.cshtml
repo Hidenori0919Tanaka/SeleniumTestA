@@ -2,44 +2,61 @@
 @model LoginViewModel
 @{
     /**/
-
+    Layout = null;//
     ViewBag.Title = "ログイン";
 }
-
-<h2 id="SeleniumH2">@ViewBag.Title</h2>
-
-@using (Html.BeginForm("Login", "Account", FormMethod.Post))
-{
-    if (ViewBag.ReturnUrl != null)
-    {
-        <text>@Html.Hidden("returnUrl", (string)ViewBag.ReturnUrl)</text>
-    }
-    @Html.ValidationSummary(true, "", new { @id = "SeleniumValidationError" })
-    <div>
-        @Html.LabelFor(m => m.UserName, new { @id = "SeleniumUserLabel" })
-        <div>
-            @Html.TextBoxFor(m => m.UserName, new { @id = "SeleniumUserText" })
-            @Html.ValidationMessageFor(model => model.UserName, "", new { @id = "SeleniumUserError" })
-        </div>
-        <div class="col-md-6 hidden-xs hidden-sm">
-            &nbsp;
+@Styles.Render("~/Content/css/LoginStyle.css")
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 mx-auto" style="width: 256px; text-align: center; height: 100%; display: flex; justify-content: center; align-items: center;">
+                <div class="">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+                    {
+                        if (ViewBag.ReturnUrl != null)
+                        {
+                            <text>@Html.Hidden("returnUrl", (string)ViewBag.ReturnUrl)</text>
+                        }
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Please sign in</h3>
+                        </div>
+                        <div class="panel-body" id="SeleniumDivPanel">
+                            <form accept-charset="UTF-8" role="form">
+                                <fieldset>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.UserName, new { @id = "SeleniumUserLabel" })
+                                        <div>
+                                            @Html.TextBoxFor(m => m.UserName, new { @id = "SeleniumUserText", @class = "form-control", @placeholder = "UserName" })
+                                            @Html.ValidationMessageFor(model => model.UserName, "", new { @id = "SeleniumUserError" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Password, new { @id = "SeleniumPasswordLabel" })
+                                        <div>
+                                            @Html.PasswordFor(m => m.Password, new { @id = "SeleniumPasswordText", @class = "form-control", @placeholder = "Password" })
+                                            @Html.ValidationMessageFor(model => model.Password, "", new { @id = "SeleniumPasswordError" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12" id="SeleniumDivCol">
+                                            <div class="checkbox" style="text-align: left;" id="SeleniumDivCheckBox">
+                                                @Html.CheckBoxFor(m => m.RememberMe)
+                                                @Html.LabelFor(m => m.RememberMe)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="submit" value="ログイン" class="btn btn-lg btn-success btn-block" id="SeleniumSubmit"/>
+                                </fieldset>
+                            </form>
+                        </div>
+                    }
+                </div>
+            </div>
         </div>
     </div>
+</body>
 
-    <div>
-        @Html.LabelFor(m => m.Password, new { @id = "SeleniumPasswordLabel" })
-        <div>
-            @Html.PasswordFor(m => m.Password, new { @id = "SeleniumPasswordText" })
-            @Html.ValidationMessageFor(model => model.Password, "", new { @id = "SeleniumPasswordError" })
-        </div>
-        <div>
-            &nbsp;
-        </div>
-    </div>
-
-    <div>
-        <div>
-            <input type="submit" value="ログイン" id="SeleniumLoginBtn"/>
-        </div>
-    </div>
-}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")

@@ -42,6 +42,15 @@ namespace UnitTest_Sample.Controllers.Tests
             //buttonValueチェック
             NUnit.Framework.Assert.AreEqual("ログイン", driver.FindElement(By.Id("SeleniumLoginBtn")).GetAttribute("value").ToString());
 
+            //Divチェック
+            
+
+            //placeholderチェック
+
+            //LINKチェック
+
+            //Scriptチェック
+
             //login nullパターン
             var element = driver.FindElement(By.Id("SeleniumUserText"));
             element.Clear();
