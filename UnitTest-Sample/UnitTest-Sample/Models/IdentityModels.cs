@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -45,5 +46,9 @@ namespace UnitTest_Sample.Models
         {
             return new ApplicationDbContext();
         }
+
+        public virtual DbSet<Fa> Fas { get; set; }
+
+        public virtual DbSet<Sec> Secs { get; set; }
     }
 }

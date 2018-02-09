@@ -204,10 +204,16 @@
     <Compile Include="Migrations\201802060652514_InitializeDatabase.Designer.cs">
       <DependentUpon>201802060652514_InitializeDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802090901572_AddTable_Fa-Sec.cs" />
+    <Compile Include="Migrations\201802090901572_AddTable_Fa-Sec.Designer.cs">
+      <DependentUpon>201802090901572_AddTable_Fa-Sec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Fa.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Sec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -242,6 +248,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802060652514_InitializeDatabase.resx">
       <DependentUpon>201802060652514_InitializeDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802090901572_AddTable_Fa-Sec.resx">
+      <DependentUpon>201802090901572_AddTable_Fa-Sec.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
