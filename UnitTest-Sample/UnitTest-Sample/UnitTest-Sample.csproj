@@ -232,6 +232,7 @@
     <Compile Include="Models\Fa.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MongoDbManager.cs" />
     <Compile Include="Models\Sec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -263,6 +264,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\MongoDB\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802060652514_InitializeDatabase.resx">
