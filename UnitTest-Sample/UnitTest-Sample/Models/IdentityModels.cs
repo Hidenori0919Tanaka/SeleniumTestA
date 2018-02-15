@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -38,17 +39,27 @@ namespace UnitTest_Sample.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("HTDB", throwIfV1Schema: false)
+            : base("HTDB"/*, throwIfV1Schema: false*/)
         {
+            //Configuration.ProxyCreationEnabled = false;
+            //this.Configuration.LazyLoadingEnabled = false;
+
+            //Database.SetInitializer<ApplicationDbContext>(null);
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Fa> Fas { get; set; }
+        public DbSet<Sec> Secs { get; set; }
 
-        public virtual DbSet<Fa> Fas { get; set; }
-
-        public virtual DbSet<Sec> Secs { get; set; }
+        public System.Data.Entity.DbSet<UnitTest_Sample.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
+
+    //public class BasicContext : ApplicationDbContext
+    //{
+    //    public virtual DbSet<Fa> Fas { get; set; }
+    //    public virtual DbSet<Sec> Secs { get; set; }
+    //}
 }
