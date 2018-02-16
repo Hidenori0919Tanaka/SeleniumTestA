@@ -1,0 +1,50 @@
+﻿@model UnitTest_Sample.Models.Sec
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sec</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fa.FaName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fa.FaName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeleteFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeleteFlag)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SecId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
