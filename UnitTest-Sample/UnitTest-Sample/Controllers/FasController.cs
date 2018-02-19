@@ -57,7 +57,7 @@ namespace UnitTest_Sample.Controllers
             using (var context = new ApplicationDbContext())
             {
                 var faUserList =
-                    (from p in context.ApplicationUsers
+                    (from p in context.Users
                      where !p.LockoutEnabled
                      orderby p.UserName ascending
                      select p).AsNoTracking().ToList();
@@ -96,7 +96,7 @@ namespace UnitTest_Sample.Controllers
                 else
                 {
                     var faUserList =
-                        (from p in context.ApplicationUsers
+                        (from p in context.Users
                         where !p.LockoutEnabled
                         orderby p.UserName ascending
                         select p).AsNoTracking().ToList();
@@ -112,7 +112,7 @@ namespace UnitTest_Sample.Controllers
             using (var context = new ApplicationDbContext())
             {
                 var faUserList =
-                    (from p in context.ApplicationUsers
+                    (from p in context.Users
                      where !p.LockoutEnabled
                      orderby p.UserName ascending
                      select p).AsNoTracking().ToList();
@@ -153,7 +153,7 @@ namespace UnitTest_Sample.Controllers
                 else
                 {
                     var faUserList =
-                        (from p in context.ApplicationUsers
+                        (from p in context.Users
                          where !p.LockoutEnabled
                          orderby p.UserName ascending
                          select p).AsNoTracking().ToList();
