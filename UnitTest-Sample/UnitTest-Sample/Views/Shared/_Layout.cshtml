@@ -17,3 +17,8 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+@*@if (HttpContext.Current.IsDebuggingEnabled)
+{
+    <p>デバッグ</p>
+}*@
