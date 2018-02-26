@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using SampleWebAPI.Entity;
+using SampleWebAPI.Entity.RDB;
 
 namespace SampleWebAPI.Models
 {
