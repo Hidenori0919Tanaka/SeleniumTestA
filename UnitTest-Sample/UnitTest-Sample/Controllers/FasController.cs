@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using UnitTest_Sample.Entity.RDB;
 using UnitTest_Sample.Models;
 
 namespace UnitTest_Sample.Controllers

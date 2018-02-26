@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using UnitTest_Sample.Entity.RDB;
 
 namespace UnitTest_Sample.Models
 {
