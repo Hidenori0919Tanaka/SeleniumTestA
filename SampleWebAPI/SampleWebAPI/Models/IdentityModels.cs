@@ -32,10 +32,6 @@ namespace SampleWebAPI.Models
         {
             return new ApplicationDbContext();
         }
-    }
-
-    public class BasicContext : ApplicationDbContext
-    {
         public virtual DbSet<Fa> Fas { get; set; }
         public virtual DbSet<Sec> Secs { get; set; }
     }
