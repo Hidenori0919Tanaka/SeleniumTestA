@@ -34,5 +34,6 @@ namespace SampleWebAPI.Models
         }
         public virtual DbSet<Fa> Fas { get; set; }
         public virtual DbSet<Sec> Secs { get; set; }
+        public DbSet<UserViewModel> UserViewModels { get; set; }
     }
 }

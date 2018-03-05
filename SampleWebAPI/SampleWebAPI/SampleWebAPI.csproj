@@ -232,8 +232,13 @@
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Entity\RDB\Fa.cs" />
     <Compile Include="Entity\RDB\Sec.cs" />
+    <Compile Include="Entity\RDB\UserViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803050157270_add-UserViewModel.cs" />
+    <Compile Include="Migrations\201803050157270_add-UserViewModel.Designer.cs">
+      <DependentUpon>201803050157270_add-UserViewModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -317,6 +322,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803050157270_add-UserViewModel.resx">
+      <DependentUpon>201803050157270_add-UserViewModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
