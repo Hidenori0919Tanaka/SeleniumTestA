@@ -20,6 +20,11 @@ namespace SampleWebAPI.Controllers
         // GET: api/Secs
         public IQueryable<Sec> GetSecs()
         {
+            using (var context = new ApplicationDbContext())
+            using (var transaction = context.Database.BeginTransaction())
+            {
+
+            }
             return db.Secs;
         }
 
@@ -27,6 +32,11 @@ namespace SampleWebAPI.Controllers
         [ResponseType(typeof(Sec))]
         public IHttpActionResult GetSec(int id)
         {
+            using (var context = new ApplicationDbContext())
+            using (var transaction = context.Database.BeginTransaction())
+            {
+
+            }
             Sec sec = db.Secs.Find(id);
             if (sec == null)
             {
@@ -50,6 +60,11 @@ namespace SampleWebAPI.Controllers
                 return BadRequest();
             }
 
+            using (var context = new ApplicationDbContext())
+            using (var transaction = context.Database.BeginTransaction())
+            {
+
+            }
             db.Entry(sec).State = EntityState.Modified;
 
             try
@@ -79,7 +94,11 @@ namespace SampleWebAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
+            using (var context = new ApplicationDbContext())
+            using (var transaction = context.Database.BeginTransaction())
+            {
 
+            }
             db.Secs.Add(sec);
             db.SaveChanges();
 
@@ -90,6 +109,11 @@ namespace SampleWebAPI.Controllers
         [ResponseType(typeof(Sec))]
         public IHttpActionResult DeleteSec(int id)
         {
+            using (var context = new ApplicationDbContext())
+            using (var transaction = context.Database.BeginTransaction())
+            {
+
+            }
             Sec sec = db.Secs.Find(id);
             if (sec == null)
             {
