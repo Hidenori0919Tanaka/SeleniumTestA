@@ -221,6 +221,7 @@
     <Compile Include="Controllers\FasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SecsController.cs" />
+    <Compile Include="Entity\MongoDB\hogeDoc.cs" />
     <Compile Include="Entity\RDB\Fa.cs" />
     <Compile Include="Entity\RDB\Sec.cs" />
     <Compile Include="Global.asax.cs">
@@ -279,7 +280,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Entity\MongoDB\" />
     <Folder Include="Models\MongoDB\" />
   </ItemGroup>
   <ItemGroup>
