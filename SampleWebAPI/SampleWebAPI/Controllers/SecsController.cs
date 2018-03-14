@@ -15,7 +15,7 @@ namespace SampleWebAPI.Controllers
 {
     public class SecsController : ApiController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        //private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Secs
         public IQueryable<Sec> GetSecs()
@@ -23,9 +23,8 @@ namespace SampleWebAPI.Controllers
             using (var context = new ApplicationDbContext())
             using (var transaction = context.Database.BeginTransaction())
             {
-
+                return context.Secs;
             }
-            return db.Secs;
         }
 
         // GET: api/Secs/5
@@ -35,15 +34,13 @@ namespace SampleWebAPI.Controllers
             using (var context = new ApplicationDbContext())
             using (var transaction = context.Database.BeginTransaction())
             {
-
+                Sec sec = context.Secs.Find(id);
+                if (sec == null)
+                {
+                    return NotFound();
+                }
+                return Ok(sec);
             }
-            Sec sec = db.Secs.Find(id);
-            if (sec == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(sec);
         }
 
         // PUT: api/Secs/5
@@ -63,27 +60,26 @@ namespace SampleWebAPI.Controllers
             using (var context = new ApplicationDbContext())
             using (var transaction = context.Database.BeginTransaction())
             {
+                context.Entry(sec).State = EntityState.Modified;
 
-            }
-            db.Entry(sec).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!SecExists(id))
+                try
                 {
-                    return NotFound();
+                    context.SaveChanges();
                 }
-                else
+                catch (DbUpdateConcurrencyException)
                 {
-                    throw;
+                    if (!SecExists(id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
-            }
 
-            return StatusCode(HttpStatusCode.NoContent);
+                return StatusCode(HttpStatusCode.NoContent);
+            }
         }
 
         // POST: api/Secs
@@ -97,10 +93,10 @@ namespace SampleWebAPI.Controllers
             using (var context = new ApplicationDbContext())
             using (var transaction = context.Database.BeginTransaction())
             {
-
+                context.Secs.Add(sec);
+                context.SaveChanges();
             }
-            db.Secs.Add(sec);
-            db.SaveChanges();
+            
 
             return CreatedAtRoute("DefaultApi", new { id = sec.SecId }, sec);
         }
@@ -112,32 +108,40 @@ namespace SampleWebAPI.Controllers
             using (var context = new ApplicationDbContext())
             using (var transaction = context.Database.BeginTransaction())
             {
+                Sec sec = context.Secs.Find(id);
+                if (sec == null)
+                {
+                    return NotFound();
+                }
 
+                context.Secs.Remove(sec);
+                context.SaveChanges();
+
+                return Ok(sec);
             }
-            Sec sec = db.Secs.Find(id);
-            if (sec == null)
-            {
-                return NotFound();
-            }
-
-            db.Secs.Remove(sec);
-            db.SaveChanges();
-
-            return Ok(sec);
+           
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
+            using (var context = new ApplicationDbContext())
             {
-                db.Dispose();
+                if (disposing)
+                {
+                    context.Dispose();
+                }
             }
+                
             base.Dispose(disposing);
         }
 
         private bool SecExists(int id)
         {
-            return db.Secs.Count(e => e.SecId == id) > 0;
+            using (var context = new ApplicationDbContext())
+            {
+                return context.Secs.Count(e => e.SecId == id) > 0;
+            }
+            
         }
     }
 }
