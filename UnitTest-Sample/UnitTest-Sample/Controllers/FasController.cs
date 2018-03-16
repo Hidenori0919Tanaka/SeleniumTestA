@@ -129,7 +129,7 @@ namespace UnitTest_Sample.Controllers
                 }
                 else
                 {
-                    ViewBag.UserId = new SelectList(faUserList, "Id", "Email", fa.UserId);
+                    ViewBag.UserId = new SelectList(faUserList, "Id", "Email", fa.FaId);
                     return View(fa);
                 }
             }

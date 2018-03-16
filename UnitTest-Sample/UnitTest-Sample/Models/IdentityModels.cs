@@ -33,6 +33,8 @@ namespace UnitTest_Sample.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<M_User> M_Users { get; set; }
+        public DbSet<Group> Groups { get; set; }
         public DbSet<Fa> Fas { get; set; }
         public DbSet<Sec> Secs { get; set; }
     }

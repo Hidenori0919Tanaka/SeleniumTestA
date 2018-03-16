@@ -165,6 +165,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Content\Images\russianRyeFarmPicture.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap-toggle.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -190,6 +191,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="MongDB.config" />
+    <Content Include="Content\bootstrap-toggle.less" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -218,12 +220,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BootStrapController.cs" />
     <Compile Include="Controllers\FasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SecsController.cs" />
     <Compile Include="Entity\MongoDB\hogeDoc.cs" />
     <Compile Include="Entity\RDB\Fa.cs" />
+    <Compile Include="Entity\RDB\Group.cs" />
     <Compile Include="Entity\RDB\Sec.cs" />
+    <Compile Include="Entity\RDB\M_User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,6 +239,10 @@
     <Compile Include="Migrations\201802090901572_AddTable_Fa-Sec.cs" />
     <Compile Include="Migrations\201802090901572_AddTable_Fa-Sec.Designer.cs">
       <DependentUpon>201802090901572_AddTable_Fa-Sec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803160729424_addNewTable_CollectColumn.cs" />
+    <Compile Include="Migrations\201803160729424_addNewTable_CollectColumn.Designer.cs">
+      <DependentUpon>201803160729424_addNewTable_CollectColumn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -271,6 +280,7 @@
     <Content Include="Views\Secs\Details.cshtml" />
     <Content Include="Views\Secs\Edit.cshtml" />
     <Content Include="Views\Secs\Index.cshtml" />
+    <Content Include="Views\BootStrap\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -288,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802090901572_AddTable_Fa-Sec.resx">
       <DependentUpon>201802090901572_AddTable_Fa-Sec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803160729424_addNewTable_CollectColumn.resx">
+      <DependentUpon>201803160729424_addNewTable_CollectColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

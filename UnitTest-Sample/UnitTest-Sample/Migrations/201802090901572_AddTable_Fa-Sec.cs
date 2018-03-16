@@ -19,7 +19,7 @@ namespace UnitTest_Sample.Migrations
                         DeleteFlag = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.FaId)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId)
+                //.ForeignKey("dbo.AspNetUsers", t => t.UserId)
                 .Index(t => t.UserId);
             
             CreateTable(

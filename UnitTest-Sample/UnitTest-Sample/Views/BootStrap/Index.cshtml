@@ -1,0 +1,28 @@
+﻿
+@{
+    //Layout = null;
+}
+
+@section headers {
+    @Styles.Render("~/Content/bootstrap-toggle.less")
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>hoge</h1>
+        <input type="checkbox" checked data-toggle="toggle">
+    </div>
+</body>
+</html>
+
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/bootstrap-toggle.js")
+}
